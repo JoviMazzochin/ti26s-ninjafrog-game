@@ -25,13 +25,6 @@
    eJzVlM8OwUAQxrdx8OcoBAccBaEEVxdOPA+eEq/km8jEZDK73bRNo1/yS7S2O/PN7E7POXesOX0wB3twADtXT83c18cFXDPWdhL7d9WyYrOPuutffNzAHTxyfm/5GINpkaQCKpqv1BO8wNvF92MAhh7+Qexj4sI9WIG1h6ok668V248TOHvIEvVyJJ6teaPfNZIfMSr7fuicSdTLNMc+fG71fpbKnldWzvRuE5mP/IbPbUwNYu9HjKiGWyMu5xTbE96HfVAN9GzRNSmjH3wGOLbPh8xH5yHPkfTgQ8dgH/JeEaE5q9FxU7WfNetoTRP/tUDbsyaErgn5WIBuzVmCD+ZBL8g=
   </data>
  </layer>
- <objectgroup id="8" name="box">
-  <object id="72" x="708.05" y="26.1089" width="19.8925" height="19.7544"/>
-  <object id="73" x="532.054" y="122.021" width="19.9907" height="19.9093"/>
-  <object id="74" x="451.956" y="121.923" width="19.9907" height="19.9093"/>
-  <object id="75" x="211.92" y="25.9535" width="19.9907" height="19.9093"/>
-  <object id="76" x="164.045" y="25.9812" width="19.9907" height="19.9093"/>
- </objectgroup>
  <objectgroup id="6" name="ground">
   <object id="41" x="16.0655" y="16.1836" width="31.8947" height="31.7766"/>
   <object id="42" x="48.0783" y="16.0655" width="16.0064" height="16.0655"/>
@@ -66,5 +59,12 @@
   <object id="65" x="336.011" y="216.968" width="47.8743" height="7.17126"/>
   <object id="66" x="592.612" y="136.793" width="46.4812" height="7.47865"/>
   <object id="67" x="480.158" y="208.454" width="47.7421" height="15.8127"/>
+ </objectgroup>
+ <objectgroup id="8" name="box">
+  <object id="72" x="708.05" y="26.1089" width="19.8925" height="19.7544"/>
+  <object id="73" x="532.054" y="122.021" width="19.9907" height="19.9093"/>
+  <object id="74" x="451.956" y="121.923" width="19.9907" height="19.9093"/>
+  <object id="75" x="211.92" y="25.9535" width="19.9907" height="19.9093"/>
+  <object id="76" x="164.045" y="25.9812" width="19.9907" height="19.9093"/>
  </objectgroup>
 </map>

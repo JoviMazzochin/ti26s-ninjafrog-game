@@ -12,6 +12,7 @@ public class NinjaFrog extends Sprite {
     public enum State {FALLING, JUMPING, STANDING, RUNNING};
     public State currentState;
     public State previousState;
+
     public World world;
     public Body b2body;
     private TextureRegion ninjaFrogStand;

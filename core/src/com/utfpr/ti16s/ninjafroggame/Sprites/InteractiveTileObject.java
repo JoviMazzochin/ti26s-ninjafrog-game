@@ -23,11 +23,13 @@ public abstract class InteractiveTileObject {
         PolygonShape shape = new PolygonShape();
 
         bdef.type = BodyDef.BodyType.StaticBody;
-        bdef.position.set((bounds.getX() + bounds.getWidth() / 2) / NinjaFrogGame.PPM, (bounds.getY() + bounds.getHeight() / 2) / NinjaFrogGame.PPM);
+        bdef.position.set((bounds.getX() + bounds.getWidth() / 2) / NinjaFrogGame.PPM,
+                          (bounds.getY() + bounds.getHeight() / 2) / NinjaFrogGame.PPM);
 
         body = world.createBody(bdef);
 
-        shape.setAsBox((bounds.getWidth() / 2) / NinjaFrogGame.PPM, (bounds.getHeight() / 2) / NinjaFrogGame.PPM);
+        shape.setAsBox((bounds.getWidth() / 2) / NinjaFrogGame.PPM,
+                       (bounds.getHeight() / 2) / NinjaFrogGame.PPM);
         fdef.shape = shape;
         body.createFixture(fdef);
     }
