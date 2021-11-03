@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.5" tiledversion="1.7.2" orientation="orthogonal" renderorder="right-down" width="50" height="15" tilewidth="16" tileheight="16" infinite="0" nextlayerid="8" nextobjectid="68">
+<map version="1.5" tiledversion="1.7.2" orientation="orthogonal" renderorder="right-down" width="50" height="15" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="77">
  <tileset firstgid="1" name="Blue" tilewidth="16" tileheight="16" tilecount="16" columns="4">
   <image source="Assets/Background/Blue.png" width="64" height="64"/>
  </tileset>
@@ -12,6 +12,9 @@
  <tileset firstgid="260" name="On (16x32)" tilewidth="16" tileheight="16" tilecount="6" columns="3">
   <image source="Assets/Traps/Fire/On (16x32).png" width="48" height="32"/>
  </tileset>
+ <tileset firstgid="266" name="Box" tilewidth="28" tileheight="24" tilecount="1" columns="1">
+  <image source="Assets/Items/Boxes/Box1/Box.png" width="28" height="24"/>
+ </tileset>
  <layer id="1" name="background" width="50" height="15">
   <data encoding="base64" compression="zlib">
    eJzt07cRwDAQA8GnHOVo+q9WVwZeg2CDy4ESEQtWbChJe8eBijNxX7jx4E3cDR0DM3Gr7Nv/8D8UW2Xf/of/odgq+/Y//vWPD7m7F54=
@@ -19,16 +22,23 @@
  </layer>
  <layer id="5" name="graphics" width="50" height="15">
   <data encoding="base64" compression="zlib">
-   eJzVlM0OAUEQhEcccBWCJxCEJUhwcOFEghfHK6mOdLbTmRmd3Q2mku+yOz9V3TPTcc7tE6cLRmAF1mDp0tTQvXOcwPnHXsqIc6Suf8lxAVdwKzjfl2MDdmVMRVTWr9QdPMDT2fvRA/0A/yDOsXXxHkzBLMC3JOuvZe3HARwDfBL1cmBymqtey7Go6vvh80y9zAqsw+fWUoOq3yufZ/o2N/qRc/jcWmpgvR8WUQ0Xnn3Zk7UnvA7noBrot0XXpIp+8BngvUM5pB/tQ54jmSGE3oNzyHtFxN5Zjd43U+v53joa08C/JmgFxsTQNaEcY9BOnAl4AbmCL38=
+   eJzVlM8OwUAQxrdx8OcoBAccBaEEVxdOPA+eEq/km8jEZDK73bRNo1/yS7S2O/PN7E7POXesOX0wB3twADtXT83c18cFXDPWdhL7d9WyYrOPuutffNzAHTxyfm/5GINpkaQCKpqv1BO8wNvF92MAhh7+Qexj4sI9WIG1h6ok668V248TOHvIEvVyJJ6teaPfNZIfMSr7fuicSdTLNMc+fG71fpbKnldWzvRuE5mP/IbPbUwNYu9HjKiGWyMu5xTbE96HfVAN9GzRNSmjH3wGOLbPh8xH5yHPkfTgQ8dgH/JeEaE5q9FxU7WfNetoTRP/tUDbsyaErgn5WIBuzVmCD+ZBL8g=
   </data>
  </layer>
+ <objectgroup id="8" name="box">
+  <object id="72" x="708.05" y="26.1089" width="19.8925" height="19.7544"/>
+  <object id="73" x="532.054" y="122.021" width="19.9907" height="19.9093"/>
+  <object id="74" x="451.956" y="121.923" width="19.9907" height="19.9093"/>
+  <object id="75" x="211.92" y="25.9535" width="19.9907" height="19.9093"/>
+  <object id="76" x="164.045" y="25.9812" width="19.9907" height="19.9093"/>
+ </objectgroup>
  <objectgroup id="6" name="ground">
   <object id="41" x="16.0655" y="16.1836" width="31.8947" height="31.7766"/>
   <object id="42" x="48.0783" y="16.0655" width="16.0064" height="16.0655"/>
-  <object id="43" x="16.0655" y="112.104" width="31.0088" height="4.90234"/>
-  <object id="44" x="64.9707" y="80.0912" width="30.0047" height="4.84327"/>
-  <object id="45" x="64.9976" y="144.182" width="29.993" height="4.70327"/>
-  <object id="46" x="16.1916" y="176.18" width="30.8411" height="4.85748"/>
+  <object id="43" x="16.0655" y="112.104" width="31.7702" height="15.8659"/>
+  <object id="44" x="64.2093" y="80.0912" width="31.6797" height="15.5023"/>
+  <object id="45" x="64.084" y="144.182" width="31.668" height="15.5146"/>
+  <object id="46" x="16.1916" y="176.18" width="31.7547" height="15.5165"/>
   <object id="47" x="144.061" y="96.1919" width="111.889" height="47.7392"/>
   <object id="48" x="80.0844" y="208.22" width="175.961" height="15.6427"/>
   <object id="49" x="256.345" y="192.053" width="31.7344" height="32.1086"/>
@@ -44,10 +54,14 @@
   <object id="59" x="736.327" y="208.026" width="47.8311" height="17.61"/>
   <object id="60" x="672.058" y="111.978" width="47.9636" height="16.0983"/>
   <object id="61" x="736.073" y="80.0182" width="47.9636" height="16.1457"/>
-  <object id="62" x="529.086" y="64.0998" width="45.8917" height="4.83071"/>
-  <object id="63" x="433.154" y="80.0783" width="45.8298" height="4.89264"/>
+  <object id="62" x="528.172" y="64.0998" width="47.719" height="15.7943"/>
+  <object id="63" x="432.088" y="80.0783" width="47.8093" height="15.8562"/>
+  <object id="68" x="0" y="0" width="16.3699" height="240.092"/>
+  <object id="69" x="16.572" y="0" width="783.331" height="16.572"/>
+  <object id="70" x="784.341" y="0.202098" width="15.5615" height="239.89"/>
+  <object id="71" x="0.202098" y="223.924" width="799.701" height="16.1678"/>
  </objectgroup>
- <objectgroup id="7" name="traps">
+ <objectgroup id="7" name="trap">
   <object id="64" x="16.1228" y="216.893" width="63.7266" height="7.29694"/>
   <object id="65" x="336.011" y="216.968" width="47.8743" height="7.17126"/>
   <object id="66" x="592.612" y="136.793" width="46.4812" height="7.47865"/>

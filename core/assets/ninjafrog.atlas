@@ -1,0 +1,34 @@
+
+ninjafrog.png
+size: 1024, 64
+format: RGBA8888
+filter: Nearest, Nearest
+repeat: none
+Fall (32x32)
+  rotate: false
+  xy: 776, 2
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+Idle (32x32)
+  rotate: false
+  xy: 388, 2
+  size: 352, 32
+  orig: 352, 32
+  offset: 0, 0
+  index: -1
+Jump (32x32)
+  rotate: false
+  xy: 742, 2
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+Run (32x32)
+  rotate: false
+  xy: 2, 2
+  size: 384, 32
+  orig: 384, 32
+  offset: 0, 0
+  index: -1
