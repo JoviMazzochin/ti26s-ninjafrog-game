@@ -1,5 +1,7 @@
 package com.utfpr.ti16s.ninjafroggame.Sprites;
 
+import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -22,6 +24,8 @@ public class NinjaFrog extends Sprite {
     private Animation ninjaFrogStanding;
     private float stateTimer;
     private boolean runningRight;
+
+//    private Sound sound;
 
 
     public NinjaFrog(World world, PlayScreen screen) {
@@ -71,6 +75,8 @@ public class NinjaFrog extends Sprite {
         TextureRegion region;
         switch (currentState) {
             case JUMPING:
+//                sound = NinjaFrogGame.manager.get("audio/sounds/jump.wav", Sound.class);
+//                sound.play();
                 region = (TextureRegion) ninjaFrogJump.getKeyFrame(stateTimer);
                 break;
             case RUNNING:
@@ -116,7 +122,7 @@ public class NinjaFrog extends Sprite {
 
         FixtureDef fdef = new FixtureDef();
         CircleShape shape = new CircleShape();
-        shape.setRadius(12 / NinjaFrogGame.PPM);
+        shape.setRadius(10 / NinjaFrogGame.PPM);
 
         fdef.shape = shape;
         b2body.createFixture(fdef);

@@ -23,7 +23,8 @@ public class NinjaFrogGame extends Game {
 	public void create () {
 		batch = new SpriteBatch();
 		manager = new AssetManager();
-		manager.load("audio/musics/music.wav", Music.class);
+//		manager.load("audio/musics/music1.mp3", Music.class);
+		manager.load("audio/musics/music2.mp3", Music.class);
 		manager.load("audio/sounds/jump.wav", Sound.class);
 		manager.load("audio/sounds/coin.wav", Sound.class);
 		manager.finishLoading();
@@ -34,7 +35,5 @@ public class NinjaFrogGame extends Game {
 	@Override
 	public void render () {
 		super.render();
-
-
 	}
 }

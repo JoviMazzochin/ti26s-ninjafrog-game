@@ -65,9 +65,10 @@ public class PlayScreen implements Screen {
         //create Ninja in the game
         player = new NinjaFrog(world, this);
 
-        music = NinjaFrogGame.manager.get("audio/musics/music.wav", Music.class);
+//        music = NinjaFrogGame.manager.get("audio/musics/music1.mp3", Music.class);
+        music = NinjaFrogGame.manager.get("audio/musics/music2.mp3", Music.class);
         music.setLooping(true);
-        music.setVolume(0.1f);
+        music.setVolume(0.05f);
         music.play();
 
     }
