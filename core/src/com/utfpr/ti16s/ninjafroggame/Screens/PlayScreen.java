@@ -45,7 +45,7 @@ public class PlayScreen implements Screen {
         this.game = game;
         gameCam = new OrthographicCamera(); // Create cam used to follow NinjaFrog
         gamePort = new FitViewport(NinjaFrogGame.V_WIDTH / NinjaFrogGame.PPM, NinjaFrogGame.V_HEIGHT / NinjaFrogGame.PPM, gameCam); // Maintain virtual aspact ratio
-        hud = new Hud(game.batch); // create hame HUD for scores / level / timers info
+        hud = new Hud(game.getBatch()); // create hame HUD for scores / level / timers info
 
         // Importing map from Tiled
         mapLoader = new TmxMapLoader();
@@ -66,7 +66,7 @@ public class PlayScreen implements Screen {
         player = new NinjaFrog(world, this);
 
 //        music = NinjaFrogGame.manager.get("audio/musics/music1.mp3", Music.class);
-        music = NinjaFrogGame.manager.get("audio/musics/music2.mp3", Music.class);
+        music = NinjaFrogGame.getAssetManager().get("audio/musics/music2.mp3", Music.class);
         music.setLooping(true);
         music.setVolume(0.05f);
         music.play();
