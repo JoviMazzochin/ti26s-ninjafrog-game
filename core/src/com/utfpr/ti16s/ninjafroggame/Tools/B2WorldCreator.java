@@ -26,7 +26,6 @@ public class B2WorldCreator {
         // creating trap bodies/fixtures
         for (MapObject object : map.getLayers().get(3).getObjects().getByType(RectangleMapObject.class)){
             Rectangle rect = ((RectangleMapObject) object).getRectangle();
-
             new Trap(world, map, rect);
         }
 

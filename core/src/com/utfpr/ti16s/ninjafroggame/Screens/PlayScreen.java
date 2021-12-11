@@ -18,6 +18,7 @@ import com.utfpr.ti16s.ninjafroggame.NinjaFrogGame;
 import com.utfpr.ti16s.ninjafroggame.Scenes.Hud;
 import com.utfpr.ti16s.ninjafroggame.Sprites.NinjaFrog;
 import com.utfpr.ti16s.ninjafroggame.Tools.B2WorldCreator;
+import com.utfpr.ti16s.ninjafroggame.Tools.WorldContactListener;
 
 public class PlayScreen implements Screen {
     private NinjaFrogGame game; // Reference to Game, user to set Screens
@@ -65,6 +66,8 @@ public class PlayScreen implements Screen {
         //create Ninja in the game
         player = new NinjaFrog(world, this);
 
+        world.setContactListener(new WorldContactListener());
+
 //        music = NinjaFrogGame.manager.get("audio/musics/music1.mp3", Music.class);
         music = NinjaFrogGame.getAssetManager().get("audio/musics/music2.mp3", Music.class);
         music.setLooping(true);
@@ -90,6 +93,8 @@ public class PlayScreen implements Screen {
         handleInput(dt);
 
         world.step(1/60f, 6, 2);
+
+        hud.update(dt);
 
         player.update(dt);
 

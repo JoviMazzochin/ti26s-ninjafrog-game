@@ -8,4 +8,9 @@ public class Ground extends InteractiveTileObject{
     public Ground(World world, TiledMap tiledMap, Rectangle bounds) {
         super(world, tiledMap, bounds);
     }
+
+    @Override
+    public void onHit() {
+
+    }
 }

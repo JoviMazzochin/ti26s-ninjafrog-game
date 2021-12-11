@@ -1,10 +1,9 @@
 package com.utfpr.ti16s.ninjafroggame.Sprites;
 
-import com.badlogic.gdx.audio.Music;
-import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.*;
 import com.badlogic.gdx.utils.Array;
 import com.utfpr.ti16s.ninjafroggame.NinjaFrogGame;
@@ -123,8 +122,19 @@ public class NinjaFrog extends Sprite {
         FixtureDef fdef = new FixtureDef();
         CircleShape shape = new CircleShape();
         shape.setRadius(10 / NinjaFrogGame.PPM);
+        fdef.filter.categoryBits = NinjaFrogGame.NINJA_BIT;
+        fdef.filter.maskBits = NinjaFrogGame.DEFAULT_BIT | NinjaFrogGame.COIN_BIT | NinjaFrogGame.BOX_BIT
+        |   NinjaFrogGame.TRAP_BIT;
 
         fdef.shape = shape;
-        b2body.createFixture(fdef);
+        b2body.createFixture(fdef).setUserData(this);
+
+        EdgeShape head = new EdgeShape();
+        head.set(new Vector2(-2/NinjaFrogGame.PPM, 10/NinjaFrogGame.PPM),
+                new Vector2(2/NinjaFrogGame.PPM, 10/NinjaFrogGame.PPM));
+        fdef.shape = head;
+        fdef.isSensor = true;
+
+        b2body.createFixture(fdef).setUserData("head");
     }
 }

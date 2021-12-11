@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.5" tiledversion="1.7.2" orientation="orthogonal" renderorder="right-down" width="50" height="15" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="77">
+<map version="1.5" tiledversion="1.7.2" orientation="orthogonal" renderorder="right-down" width="50" height="15" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="85">
  <tileset firstgid="1" name="Blue" tilewidth="16" tileheight="16" tilecount="16" columns="4">
   <image source="Assets/Background/Blue.png" width="64" height="64"/>
  </tileset>
@@ -12,9 +12,6 @@
  <tileset firstgid="260" name="On (16x32)" tilewidth="16" tileheight="16" tilecount="6" columns="3">
   <image source="Assets/Traps/Fire/On (16x32).png" width="48" height="32"/>
  </tileset>
- <tileset firstgid="266" name="Box" tilewidth="28" tileheight="24" tilecount="1" columns="1">
-  <image source="Assets/Items/Boxes/Box1/Box.png" width="28" height="24"/>
- </tileset>
  <layer id="1" name="background" width="50" height="15">
   <data encoding="base64" compression="zlib">
    eJzt07cRwDAQA8GnHOVo+q9WVwZeg2CDy4ESEQtWbChJe8eBijNxX7jx4E3cDR0DM3Gr7Nv/8D8UW2Xf/of/odgq+/Y//vWPD7m7F54=
@@ -22,7 +19,7 @@
  </layer>
  <layer id="5" name="graphics" width="50" height="15">
   <data encoding="base64" compression="zlib">
-   eJzVlM8OwUAQxrdx8OcoBAccBaEEVxdOPA+eEq/km8jEZDK73bRNo1/yS7S2O/PN7E7POXesOX0wB3twADtXT83c18cFXDPWdhL7d9WyYrOPuutffNzAHTxyfm/5GINpkaQCKpqv1BO8wNvF92MAhh7+Qexj4sI9WIG1h6ok668V248TOHvIEvVyJJ6teaPfNZIfMSr7fuicSdTLNMc+fG71fpbKnldWzvRuE5mP/IbPbUwNYu9HjKiGWyMu5xTbE96HfVAN9GzRNSmjH3wGOLbPh8xH5yHPkfTgQ8dgH/JeEaE5q9FxU7WfNetoTRP/tUDbsyaErgn5WIBuzVmCD+ZBL8g=
+   eJzVlEsKwkAMhkc8gS/UhboUFV+oW1F0pedRr+Rl1CuZIMEQMtMwU0r7wwdt6czkTzJpO+f2FacDTIAtsAM2rpoau5+PC3DN+PfpeY5RynptLfmousri4wbcgUfkes3HABglxBTqmdR4uV7AG/g4ez26QM9DGUQ+hi5cgzmw8FCUeP6lrPU4AWcPWcJa9tm71nfyW732x6K874eMGYW1XEbsQ30r99OU97zSYsZvK2M8fA31rSUH1vthEeZwrZxLMVlrQvuQD8yBnC0yJ3nUg3qAzvb54PHIOHgfcQ8+5Bnk4ygIzVmJPBfP4PdUm3X4z4ERmocaMifoYwo0C6YlfDQS95sBX6wbNkw=
   </data>
  </layer>
  <objectgroup id="6" name="ground">
@@ -52,19 +49,20 @@
   <object id="68" x="0" y="0" width="16.3699" height="240.092"/>
   <object id="69" x="16.572" y="0" width="783.331" height="16.572"/>
   <object id="70" x="784.341" y="0.202098" width="15.5615" height="239.89"/>
-  <object id="71" x="0.202098" y="223.924" width="799.701" height="16.1678"/>
+  <object id="71" x="0.202098" y="223.924" width="479.457" height="16.1678"/>
+  <object id="83" x="528.977" y="224.601" width="270.249" height="16.1678"/>
  </objectgroup>
  <objectgroup id="7" name="trap">
-  <object id="64" x="16.1228" y="216.893" width="63.7266" height="7.29694"/>
   <object id="65" x="336.011" y="216.968" width="47.8743" height="7.17126"/>
   <object id="66" x="592.612" y="136.793" width="46.4812" height="7.47865"/>
-  <object id="67" x="480.158" y="208.454" width="47.7421" height="15.8127"/>
  </objectgroup>
  <objectgroup id="8" name="box">
-  <object id="72" x="708.05" y="26.1089" width="19.8925" height="19.7544"/>
-  <object id="73" x="532.054" y="122.021" width="19.9907" height="19.9093"/>
-  <object id="74" x="451.956" y="121.923" width="19.9907" height="19.9093"/>
-  <object id="75" x="211.92" y="25.9535" width="19.9907" height="19.9093"/>
-  <object id="76" x="164.045" y="25.9812" width="19.9907" height="19.9093"/>
+  <object id="76" x="159.999" y="31.9685" width="16.107" height="15.8638"/>
+  <object id="77" x="207.898" y="31.9685" width="16.107" height="15.8638"/>
+  <object id="78" x="320.201" y="79.8673" width="16.107" height="15.8638"/>
+  <object id="79" x="447.878" y="127.604" width="16.107" height="15.8638"/>
+  <object id="80" x="463.898" y="32.2922" width="16.107" height="15.8638"/>
+  <object id="81" x="527.655" y="127.928" width="16.107" height="15.8638"/>
+  <object id="82" x="703.715" y="32.1304" width="16.107" height="15.8638"/>
  </objectgroup>
 </map>

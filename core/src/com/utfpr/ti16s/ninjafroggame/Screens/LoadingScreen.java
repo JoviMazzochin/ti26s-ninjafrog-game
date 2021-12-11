@@ -1,12 +1,10 @@
 package com.utfpr.ti16s.ninjafroggame.Screens;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.utfpr.ti16s.ninjafroggame.NinjaFrogGame;
 
@@ -21,7 +19,7 @@ public class LoadingScreen extends ScreenAdapter {
 
     public LoadingScreen(NinjaFrogGame game) {
         this.game = game;
-        this.assetManager = game.getAssetManager();
+        this.assetManager = NinjaFrogGame.getAssetManager();
         this.shapeRenderer = game.getShapeRenderer();
     }
 

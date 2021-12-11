@@ -16,6 +16,13 @@ public class NinjaFrogGame extends Game {
 	public static final int V_HEIGHT = 320;
 	public static final float PPM = 100;
 
+	public static final short DEFAULT_BIT = 1;
+	public static final short NINJA_BIT = 2;
+	public static final short BOX_BIT = 4;
+	public static final short COIN_BIT = 8;
+	public static final short DESTROYED_BIT = 16;
+	public static final short TRAP_BIT = 32;
+
 	public SpriteBatch batch;
 	private ShapeRenderer shapeRenderer;
 	private Viewport viewport;
