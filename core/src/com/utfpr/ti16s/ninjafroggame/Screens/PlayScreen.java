@@ -69,10 +69,11 @@ public class PlayScreen implements Screen {
         world.setContactListener(new WorldContactListener());
 
 //        music = NinjaFrogGame.manager.get("audio/musics/music1.mp3", Music.class);
-        music = NinjaFrogGame.getAssetManager().get("audio/musics/music2.mp3", Music.class);
-        music.setLooping(true);
-        music.setVolume(0.05f);
-        music.play();
+
+//        music = NinjaFrogGame.getAssetManager().get("audio/musics/music2.mp3", Music.class);
+//        music.setLooping(true);
+//        music.setVolume(0.05f);
+//        music.play();
 
     }
 
@@ -136,6 +137,15 @@ public class PlayScreen implements Screen {
 
         game.batch.setProjectionMatrix(hud.stage.getCamera().combined);
         hud.stage.draw();
+
+        if (getHud().getScore() == 5800) {
+            game.setScreen(new WinScreen(game));
+        }
+
+        if(gameOver()){
+            game.setScreen(new GameOverScreen(game));
+            dispose();
+        }
     }
 
     @Override
@@ -165,5 +175,15 @@ public class PlayScreen implements Screen {
         world.dispose();
         box2DDebugRenderer.dispose();
         hud.dispose();
+    }
+
+    public Hud getHud(){ return hud; }
+
+    public void stopTimer() {
+        getHud().stopTimer();
+    }
+
+    public boolean gameOver(){
+        return player.currentState == NinjaFrog.State.DEAD;
     }
 }

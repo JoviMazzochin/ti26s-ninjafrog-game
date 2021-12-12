@@ -6,6 +6,7 @@ import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.physics.box2d.*;
 import com.utfpr.ti16s.ninjafroggame.Sprites.Box;
+import com.utfpr.ti16s.ninjafroggame.Sprites.Coin;
 import com.utfpr.ti16s.ninjafroggame.Sprites.Ground;
 import com.utfpr.ti16s.ninjafroggame.Sprites.Trap;
 
@@ -33,7 +34,7 @@ public class B2WorldCreator {
         for (MapObject object : map.getLayers().get(4).getObjects().getByType(RectangleMapObject.class)){
             Rectangle rect = ((RectangleMapObject) object).getRectangle();
 
-            new Box(world, map, rect);
+            new Coin(world, map, rect);
         }
     }
 }

@@ -4,6 +4,8 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.physics.box2d.*;
 import com.utfpr.ti16s.ninjafroggame.NinjaFrogGame;
 import com.utfpr.ti16s.ninjafroggame.Sprites.InteractiveTileObject;
+import com.utfpr.ti16s.ninjafroggame.Sprites.NinjaFrog;
+import com.utfpr.ti16s.ninjafroggame.Sprites.Trap;
 
 public class WorldContactListener implements ContactListener {
     @Override
@@ -11,23 +13,21 @@ public class WorldContactListener implements ContactListener {
         Fixture fixA = contact.getFixtureA();
         Fixture fixB = contact.getFixtureB();
 
-        if(fixA.getUserData() == "head" || fixB.getUserData() == "head") {
-            Fixture head = fixA.getUserData() == "head" ? fixA : fixB;
-            Fixture object = head == fixA ? fixB : fixA;
+        int cDef = fixA.getFilterData().categoryBits | fixB.getFilterData().categoryBits;
 
-            if(object.getUserData() != null && InteractiveTileObject.class.isAssignableFrom(object.getUserData().getClass())) {
-                ((InteractiveTileObject) object.getUserData()).onHit();
-            }
-
-        }
-
-        if(fixA.getUserData() == "ninjaBody" || fixB.getUserData() == "ninjaBody"){
-            Fixture ninja = fixA.getUserData() == "ninjaBody" ? fixA : fixB;
-            Fixture object = ninja == fixA ? fixB : fixA;
-
-            if (object.getUserData() != null && InteractiveTileObject.class.isAssignableFrom(object.getUserData().getClass())){
-                ((InteractiveTileObject) object.getUserData()).onHit();
-            }
+        switch (cDef){
+            case NinjaFrogGame.NINJA_BIT | NinjaFrogGame.COIN_BIT:
+                if(fixA.getFilterData().categoryBits == NinjaFrogGame.NINJA_BIT)
+                    ((InteractiveTileObject) fixB.getUserData()).onHit();
+                else
+                    ((InteractiveTileObject) fixA.getUserData()).onHit();
+                break;
+            case NinjaFrogGame.NINJA_BIT | NinjaFrogGame.TRAP_BIT:
+                if(fixA.getFilterData().categoryBits == NinjaFrogGame.NINJA_BIT)
+                    ((NinjaFrog) fixA.getUserData()).dieOnHit();
+                else
+                    ((NinjaFrog) fixB.getUserData()).dieOnHit();
+                break;
         }
     }
 

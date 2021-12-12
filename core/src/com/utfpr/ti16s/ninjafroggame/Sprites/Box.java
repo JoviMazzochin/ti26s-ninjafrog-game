@@ -12,12 +12,12 @@ import com.utfpr.ti16s.ninjafroggame.Scenes.Hud;
 
 public class Box extends InteractiveTileObject{
 
-    private static TiledMapTileSet tileSet;
-    private final int BLANK_BOX = 6;
+//    private static TiledMapTileSet tileSet;
+//    private final int BLANK_BOX = 6;
 
     public Box(World world, TiledMap map, Rectangle bounds){
         super(world, map, bounds);
-        tileSet = map.getTileSets().getTileSet("Terrain");
+//        tileSet = map.getTileSets().getTileSet("Terrain");
         fixture.setUserData(this);
         setCategoryFilter(NinjaFrogGame.BOX_BIT);
     }
@@ -26,7 +26,7 @@ public class Box extends InteractiveTileObject{
     public void onHit() {
         Gdx.app.log("Box", "Collision");
         setCategoryFilter(NinjaFrogGame.DESTROYED_BIT);
-        getCell().setTile(tileSet.getTile(BLANK_BOX));
+        getCell().setTile(null);
         Hud.addScore(200);
     }
 }

@@ -1,25 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.5" tiledversion="1.7.2" orientation="orthogonal" renderorder="right-down" width="50" height="15" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="85">
- <tileset firstgid="1" name="Blue" tilewidth="16" tileheight="16" tilecount="16" columns="4">
-  <image source="Assets/Background/Blue.png" width="64" height="64"/>
- </tileset>
- <tileset firstgid="17" name="Terrain" tilewidth="16" tileheight="16" tilecount="242" columns="22">
+<map version="1.5" tiledversion="1.7.2" orientation="orthogonal" renderorder="right-down" width="50" height="15" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="116">
+ <tileset firstgid="1" name="Terrain" tilewidth="16" tileheight="16" tilecount="242" columns="22">
   <image source="Assets/Terrain/Terrain (16x16).png" width="352" height="176"/>
  </tileset>
- <tileset firstgid="259" name="Idle" tilewidth="16" tileheight="16" tilecount="1" columns="1">
+ <tileset firstgid="243" name="Idle" tilewidth="16" tileheight="16" tilecount="1" columns="1">
   <image source="Assets/Traps/Spikes/Idle.png" width="16" height="16"/>
  </tileset>
- <tileset firstgid="260" name="On (16x32)" tilewidth="16" tileheight="16" tilecount="6" columns="3">
+ <tileset firstgid="244" name="On (16x32)" tilewidth="16" tileheight="16" tilecount="6" columns="3">
   <image source="Assets/Traps/Fire/On (16x32).png" width="48" height="32"/>
+ </tileset>
+ <tileset firstgid="250" name="Dust Particle" tilewidth="16" tileheight="16" tilecount="1" columns="1">
+  <image source="Assets/Other/Dust Particle.png" width="16" height="16"/>
+ </tileset>
+ <tileset firstgid="251" name="Green" tilewidth="16" tileheight="16" tilecount="16" columns="4">
+  <image source="Assets/Background/Green.png" width="64" height="64"/>
+ </tileset>
+ <tileset firstgid="267" name="Sand Particle" tilewidth="16" tileheight="16" tilecount="1" columns="1">
+  <image source="Assets/Traps/Sand Mud Ice/Sand Particle.png" width="16" height="16"/>
+ </tileset>
+ <tileset firstgid="268" name="Ice Particle" tilewidth="16" tileheight="16" tilecount="1" columns="1">
+  <image source="Assets/Traps/Sand Mud Ice/Ice Particle.png" width="16" height="16"/>
+ </tileset>
+ <tileset firstgid="269" name="Mud Particle" tilewidth="16" tileheight="16" tilecount="1" columns="1">
+  <image source="Assets/Traps/Sand Mud Ice/Mud Particle.png" width="16" height="16"/>
  </tileset>
  <layer id="1" name="background" width="50" height="15">
   <data encoding="base64" compression="zlib">
-   eJzt07cRwDAQA8GnHOVo+q9WVwZeg2CDy4ESEQtWbChJe8eBijNxX7jx4E3cDR0DM3Gr7Nv/8D8UW2Xf/of/odgq+/Y//vWPD7m7F54=
+   eJytltsOgjAQRFtUUP7/bxG0JDSZTGa7C+VhoonN9sze6pJSWm7Qt2gt2g4NuV9bagvP/YJSrCzL15ivyfOJ5x5CVo6Rt/6G7OybY8z5nDyfeE6xrg0f3E/Ijrk4U0eliM8PfI/yKm5mn0BYW4zfOxs13n7HG7xEeRU3s2PcychR72xUL3xflFdxcyxkno7YqXxm4OidjeqF747yKm5vN+5xnkUv4LB25yDiW/7qvVx/j7e1P1s9rrjU7vT6meOgF5wP7Afub+tNiO5G5vRmsdUbyouac3671Ft4Rd4b6/Wz1Wuj4YPFeYm+/dGd4e08zIHaUTPMW+t+zovHc3ZnWOwql8jDu8b6X2LVwOOJcJ6tJeZQzUiVx3C1Bnepsnuz8gdIoTaL
   </data>
  </layer>
  <layer id="5" name="graphics" width="50" height="15">
   <data encoding="base64" compression="zlib">
-   eJzVlEsKwkAMhkc8gS/UhboUFV+oW1F0pedRr+Rl1CuZIMEQMtMwU0r7wwdt6czkTzJpO+f2FacDTIAtsAM2rpoau5+PC3DN+PfpeY5RynptLfmousri4wbcgUfkes3HABglxBTqmdR4uV7AG/g4ez26QM9DGUQ+hi5cgzmw8FCUeP6lrPU4AWcPWcJa9tm71nfyW732x6K874eMGYW1XEbsQ30r99OU97zSYsZvK2M8fA31rSUH1vthEeZwrZxLMVlrQvuQD8yBnC0yJ3nUg3qAzvb54PHIOHgfcQ8+5Bnk4ygIzVmJPBfP4PdUm3X4z4ERmocaMifoYwo0C6YlfDQS95sBX6wbNkw=
+   eJzVlcEOwUAQhqdCEJajIKjg6sKJ58FT4qHcejIbJjtZO9tRjbR/8qVJs9uZf2Z32gSAbc1pIWNkjWyQFdRTI3j5OCDHyLos56lVxuDqJQ6tTOIgH3VXVXyckDNy8d73E0dM3Id5rzXI8Me8pPhSvkV0RW7IHfT9aCMdgSqIfAzA9cAEejhD5gL/Eq+/L20/dsheIE+2l11VpsVV9v0I5Wx7uYjs4fOTf4fOraYG38wrzewI5Wzfpcp8+B46t7EakEL3o6hsDZeBuJSTJh/+HfKRwudsoZrQf7OM/wedAYot+eD5+L3h54h7kPBjSD5ic9bHj2tjPBihWadZE8OvifUxQRo1Z4o8ARDfLCk=
   </data>
  </layer>
  <objectgroup id="6" name="ground">
@@ -50,19 +62,41 @@
   <object id="69" x="16.572" y="0" width="783.331" height="16.572"/>
   <object id="70" x="784.341" y="0.202098" width="15.5615" height="239.89"/>
   <object id="71" x="0.202098" y="223.924" width="479.457" height="16.1678"/>
-  <object id="83" x="528.977" y="224.601" width="270.249" height="16.1678"/>
+  <object id="83" x="477.422" y="224.601" width="321.804" height="16.1678"/>
  </objectgroup>
  <objectgroup id="7" name="trap">
   <object id="65" x="336.011" y="216.968" width="47.8743" height="7.17126"/>
-  <object id="66" x="592.612" y="136.793" width="46.4812" height="7.47865"/>
+  <object id="85" x="479.822" y="216.968" width="47.8743" height="7.17126"/>
  </objectgroup>
- <objectgroup id="8" name="box">
-  <object id="76" x="159.999" y="31.9685" width="16.107" height="15.8638"/>
-  <object id="77" x="207.898" y="31.9685" width="16.107" height="15.8638"/>
-  <object id="78" x="320.201" y="79.8673" width="16.107" height="15.8638"/>
-  <object id="79" x="447.878" y="127.604" width="16.107" height="15.8638"/>
-  <object id="80" x="463.898" y="32.2922" width="16.107" height="15.8638"/>
-  <object id="81" x="527.655" y="127.928" width="16.107" height="15.8638"/>
-  <object id="82" x="703.715" y="32.1304" width="16.107" height="15.8638"/>
+ <objectgroup id="8" name="coin">
+  <object id="76" x="147.974" y="35.8675" width="8.09213" height="8.40582"/>
+  <object id="88" x="179.444" y="35.8675" width="8.09213" height="8.40582"/>
+  <object id="89" x="211.535" y="36.0745" width="8.09213" height="8.40582"/>
+  <object id="90" x="243.833" y="35.4534" width="8.09213" height="8.40582"/>
+  <object id="91" x="35.8948" y="83.5966" width="8.09213" height="8.40582"/>
+  <object id="92" x="67.9179" y="115.444" width="8.09213" height="8.40582"/>
+  <object id="93" x="35.8948" y="147.995" width="8.09213" height="8.40582"/>
+  <object id="94" x="164.163" y="163.478" width="8.09213" height="8.40582"/>
+  <object id="95" x="179.999" y="163.478" width="8.09213" height="8.40582"/>
+  <object id="96" x="195.834" y="163.654" width="8.09213" height="8.40582"/>
+  <object id="97" x="340.114" y="83.5966" width="8.09213" height="8.40582"/>
+  <object id="98" x="355.774" y="83.4207" width="8.09213" height="8.40582"/>
+  <object id="99" x="371.433" y="83.4207" width="8.09213" height="8.40582"/>
+  <object id="100" x="435.831" y="35.9139" width="8.09213" height="8.40582"/>
+  <object id="101" x="467.679" y="35.2101" width="8.09213" height="8.40582"/>
+  <object id="102" x="451.667" y="35.562" width="8.09213" height="8.40582"/>
+  <object id="103" x="515.713" y="147.467" width="8.09213" height="8.40582"/>
+  <object id="104" x="531.901" y="147.467" width="8.09213" height="8.40582"/>
+  <object id="105" x="547.912" y="147.467" width="8.09213" height="8.40582"/>
+  <object id="106" x="531.901" y="35.738" width="8.09213" height="8.40582"/>
+  <object id="107" x="547.736" y="35.562" width="8.09213" height="8.40582"/>
+  <object id="108" x="563.572" y="35.562" width="8.09213" height="8.40582"/>
+  <object id="109" x="627.794" y="67.7611" width="8.09213" height="8.40582"/>
+  <object id="110" x="643.982" y="67.4092" width="8.09213" height="8.40582"/>
+  <object id="111" x="659.993" y="67.5851" width="8.09213" height="8.40582"/>
+  <object id="112" x="755.71" y="35.562" width="8.09213" height="8.40582"/>
+  <object id="113" x="740.051" y="35.562" width="8.09213" height="8.40582"/>
+  <object id="114" x="772.074" y="35.562" width="8.09213" height="8.40582"/>
+  <object id="115" x="755.71" y="179.666" width="8.09213" height="8.40582"/>
  </objectgroup>
 </map>

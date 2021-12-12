@@ -1,5 +1,6 @@
 package com.utfpr.ti16s.ninjafroggame.Sprites;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -10,7 +11,7 @@ import com.utfpr.ti16s.ninjafroggame.NinjaFrogGame;
 import com.utfpr.ti16s.ninjafroggame.Screens.PlayScreen;
 
 public class NinjaFrog extends Sprite {
-    public enum State {FALLING, JUMPING, STANDING, RUNNING};
+    public enum State {FALLING, JUMPING, STANDING, RUNNING, DEAD};
     public State currentState;
     public State previousState;
 
@@ -23,6 +24,8 @@ public class NinjaFrog extends Sprite {
     private Animation ninjaFrogStanding;
     private float stateTimer;
     private boolean runningRight;
+    private boolean ninjaIsDead = false;
+    private PlayScreen screen;
 
 //    private Sound sound;
 
@@ -30,6 +33,7 @@ public class NinjaFrog extends Sprite {
     public NinjaFrog(World world, PlayScreen screen) {
         super(screen.getAtlas().findRegion("Run (32x32)"));
         this. world = world;
+        this.screen = screen;
 
         currentState = State.STANDING;
         previousState = State.STANDING;
@@ -64,6 +68,13 @@ public class NinjaFrog extends Sprite {
     }
 
     public void update(float dt) {
+
+
+        if (screen.getHud().isTimeUp() && !ninjaIsDead) {
+            dieOnHit();
+        }
+
+
         setPosition(b2body.getPosition().x - getWidth() / 2, b2body.getPosition().y - getHeight() / 2);
         setRegion(getFrame(dt));
     }
@@ -102,8 +113,12 @@ public class NinjaFrog extends Sprite {
         return region;
     }
 
+
+
     private State getState() {
-        if(b2body.getLinearVelocity().y > 0)
+        if(ninjaIsDead)
+            return State.DEAD;
+        else if(b2body.getLinearVelocity().y > 0)
             return State.JUMPING;
         else if(b2body.getLinearVelocity().y < 0 && previousState != State.RUNNING)
             return State.FALLING;
@@ -136,5 +151,25 @@ public class NinjaFrog extends Sprite {
         fdef.isSensor = true;
 
         b2body.createFixture(fdef).setUserData("head");
+    }
+
+    public void dieOnHit(){
+        if (!ninjaIsDead) {
+            Gdx.app.log("State", "Muerto");
+            ninjaIsDead = true;
+            screen.stopTimer();
+            Filter filter = new Filter();
+            filter.maskBits = NinjaFrogGame.NOTHING_BIT;
+
+            for (Fixture fixture : b2body.getFixtureList()) {
+                fixture.setFilterData(filter);
+            }
+
+            b2body.applyLinearImpulse(new Vector2(0, 4f), b2body.getWorldCenter(), true);
+        }
+    }
+
+    public float getStateTimer(){
+        return stateTimer;
     }
 }
