@@ -9,7 +9,6 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
-import com.badlogic.gdx.maps.tiled.renderers.OrthoCachedTiledMapRenderer;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.*;
@@ -41,6 +40,8 @@ public class PlayScreen implements Screen {
 
     private Music music;
 
+    private float jumpDelta = 0;
+
     public PlayScreen(NinjaFrogGame game) {
         atlas = new TextureAtlas("ninjafrog.atlas");
 
@@ -58,7 +59,7 @@ public class PlayScreen implements Screen {
         gameCam.position.set(gamePort.getWorldWidth() / 2, gamePort.getWorldHeight() / 2, 0);
 
         //start world
-        world = new World(new Vector2(0,-10), true);
+        world = new World(new Vector2(0,-9.91f), true);
         box2DDebugRenderer = new Box2DDebugRenderer();
 
         //generate the world
@@ -84,7 +85,7 @@ public class PlayScreen implements Screen {
 
     public void handleInput(float dt) {
         if(Gdx.input.isKeyPressed(Input.Keys.UP))
-            player.b2body.applyLinearImpulse(new Vector2(0, 0.4f), player.b2body.getWorldCenter(), true);
+            player.jump();
         if(Gdx.input.isKeyPressed(Input.Keys.RIGHT) && player.b2body.getLinearVelocity().x <= 2)
             player.b2body.applyLinearImpulse(new Vector2(0.1f, 0), player.b2body.getWorldCenter(), true);
         if(Gdx.input.isKeyPressed(Input.Keys.LEFT) && player.b2body.getLinearVelocity().x >= -2)

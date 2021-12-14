@@ -27,8 +27,6 @@ public class NinjaFrog extends Sprite {
     private boolean ninjaIsDead = false;
     private PlayScreen screen;
 
-//    private Sound sound;
-
 
     public NinjaFrog(World world, PlayScreen screen) {
         super(screen.getAtlas().findRegion("Run (32x32)"));
@@ -63,7 +61,7 @@ public class NinjaFrog extends Sprite {
 
         defineNinjaFrog();
         ninjaFrogStand = new TextureRegion(getTexture(), 0, 0 , 32, 32);
-        setBounds(0, 0, 32 / NinjaFrogGame.PPM, 32 / NinjaFrogGame.PPM);
+        setBounds(0, 0, 24 / NinjaFrogGame.PPM, 24 / NinjaFrogGame.PPM);
         setRegion(ninjaFrogStand);
     }
 
@@ -85,8 +83,6 @@ public class NinjaFrog extends Sprite {
         TextureRegion region;
         switch (currentState) {
             case JUMPING:
-//                sound = NinjaFrogGame.manager.get("audio/sounds/jump.wav", Sound.class);
-//                sound.play();
                 region = (TextureRegion) ninjaFrogJump.getKeyFrame(stateTimer);
                 break;
             case RUNNING:
@@ -118,7 +114,7 @@ public class NinjaFrog extends Sprite {
     private State getState() {
         if(ninjaIsDead)
             return State.DEAD;
-        else if(b2body.getLinearVelocity().y > 0)
+        else if((b2body.getLinearVelocity().y > 0 && currentState == State.JUMPING) || (b2body.getLinearVelocity().y < 0 && previousState == State.JUMPING))
             return State.JUMPING;
         else if(b2body.getLinearVelocity().y < 0 && previousState != State.RUNNING)
             return State.FALLING;
@@ -130,7 +126,7 @@ public class NinjaFrog extends Sprite {
 
     public void defineNinjaFrog() {
         BodyDef bdef = new BodyDef();
-        bdef.position.set(50 / NinjaFrogGame.PPM, 50 / NinjaFrogGame.PPM);
+        bdef.position.set(45 / NinjaFrogGame.PPM, 40 / NinjaFrogGame.PPM);
         bdef.type = BodyDef.BodyType.DynamicBody;
         b2body = world.createBody(bdef);
 
@@ -139,7 +135,7 @@ public class NinjaFrog extends Sprite {
         shape.setRadius(10 / NinjaFrogGame.PPM);
         fdef.filter.categoryBits = NinjaFrogGame.NINJA_BIT;
         fdef.filter.maskBits = NinjaFrogGame.DEFAULT_BIT | NinjaFrogGame.COIN_BIT | NinjaFrogGame.BOX_BIT
-        |   NinjaFrogGame.TRAP_BIT;
+        |   NinjaFrogGame.TRAP_BIT | NinjaFrogGame.GROUND_BIT;
 
         fdef.shape = shape;
         b2body.createFixture(fdef).setUserData(this);
@@ -149,7 +145,6 @@ public class NinjaFrog extends Sprite {
                 new Vector2(2/NinjaFrogGame.PPM, 10/NinjaFrogGame.PPM));
         fdef.shape = head;
         fdef.isSensor = true;
-
         b2body.createFixture(fdef).setUserData("head");
     }
 
@@ -169,7 +164,10 @@ public class NinjaFrog extends Sprite {
         }
     }
 
-    public float getStateTimer(){
-        return stateTimer;
+    public void jump(){
+        if ( currentState != State.JUMPING ) {
+            b2body.applyLinearImpulse(new Vector2(0, 3.5f), b2body.getWorldCenter(), true);
+            currentState = State.JUMPING;
+        }
     }
 }

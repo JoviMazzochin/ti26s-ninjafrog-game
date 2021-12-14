@@ -12,14 +12,11 @@
  <tileset firstgid="250" name="Green" tilewidth="16" tileheight="16" tilecount="16" columns="4">
   <image source="Assets/Background/Green.png" width="64" height="64"/>
  </tileset>
- <tileset firstgid="266" name="Ice Particle" tilewidth="16" tileheight="16" tilecount="1" columns="1">
-  <image source="Assets/Traps/Sand Mud Ice/Ice Particle.png" trans="a9d2a0" width="16" height="16"/>
+ <tileset firstgid="266" name="Gold Particle" tilewidth="16" tileheight="16" tilecount="1" columns="1">
+  <image source="Assets/Traps/Sand Mud Ice/Gold Particle.png" trans="a9d2a0" width="16" height="16"/>
  </tileset>
- <tileset firstgid="267" name="Mud Particle" tilewidth="16" tileheight="16" tilecount="1" columns="1">
-  <image source="Assets/Traps/Sand Mud Ice/Mud Particle.png" trans="a9d2a0" width="16" height="16"/>
- </tileset>
- <tileset firstgid="268" name="Sand Particle" tilewidth="16" tileheight="16" tilecount="1" columns="1">
-  <image source="Assets/Traps/Sand Mud Ice/Sand Particle.png" trans="a9d2a0" width="16" height="16"/>
+ <tileset firstgid="267" name="collected" tilewidth="16" tileheight="16" tilecount="1" columns="1">
+  <image source="Assets/Other/Dust Particle.png" trans="a9d2a0" width="16" height="16"/>
  </tileset>
  <layer id="1" name="background" width="50" height="15">
   <data encoding="base64" compression="zlib">
@@ -28,7 +25,7 @@
  </layer>
  <layer id="5" name="graphics" width="50" height="15">
   <data encoding="base64" compression="zlib">
-   eJzVld8OwVAMxjsh/g2XgmCCWzdc8Tx4SjyUF9ATmjVHe9QssvMlvyxZztZ+bdfVAWATOQ1khKyQNbKEODWEp489cgic6yThq1XuPMHVTXKsSpMc8hG7quLjiJyQs3ff2ifuI32d7SGDH/PS4mv5FtEFuSI3sPejibQUqiDy0Ye8B6nQwykyU/iXeP19WfuxRXYKn+R62TZlWlxlfx9Szq6X88Az0i7mc2ypwTf7Stv9XFLO7l5mzIc/Q3MbqgFJ+j6KytVwIcSlnCz58PeQjwzedwvVhGaojP8HzQDF1nzwfPze8DniHjT8GJqP0J718eO6GHeGtOssZ0L4NXE+xkgtcibIAwPNJYY=
+   eJzVld0OAUEMhUuInwSXgmAFt2644nnwlHgoL+BMpNGM6aixkZ2TfNlkMrvtaWe6DSLaZE4TjMAKrMGS8tSQnj724BDZ163Fn1a5/Yxl3fot9pG7quLjCE7g7K1b+yR98N4eGPyYlxZfyzdFF3AFN7L3owXaClUQ++jTqwehHk7BTOFfkvX3Ze3HFuwUPsn1smPKNF1l349Qzq6X88g7obskz7GlBt/MK8vsCOXs1gpjPvIdPrexGrBC9yNVroaLQFzOyZKP/A77KOh9tnBNuKZl/D/4DHBszYfMx++NPEfSg4YfQ/MRm7M+flwX4y4IzTrLnhh+TZyPMahnzgQ8AFX+JW8=
   </data>
  </layer>
  <objectgroup id="6" name="ground">
