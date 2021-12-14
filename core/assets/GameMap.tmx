@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.5" tiledversion="1.7.2" orientation="orthogonal" renderorder="right-down" width="50" height="15" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="116">
+<map version="1.5" tiledversion="1.7.2" orientation="orthogonal" renderorder="right-down" width="50" height="15" tilewidth="16" tileheight="16" infinite="0" nextlayerid="10" nextobjectid="116">
  <tileset firstgid="1" name="Terrain" tilewidth="16" tileheight="16" tilecount="242" columns="22">
   <image source="Assets/Terrain/Terrain (16x16).png" width="352" height="176"/>
  </tileset>
@@ -9,29 +9,26 @@
  <tileset firstgid="244" name="On (16x32)" tilewidth="16" tileheight="16" tilecount="6" columns="3">
   <image source="Assets/Traps/Fire/On (16x32).png" width="48" height="32"/>
  </tileset>
- <tileset firstgid="250" name="Dust Particle" tilewidth="16" tileheight="16" tilecount="1" columns="1">
-  <image source="Assets/Other/Dust Particle.png" width="16" height="16"/>
- </tileset>
- <tileset firstgid="251" name="Green" tilewidth="16" tileheight="16" tilecount="16" columns="4">
+ <tileset firstgid="250" name="Green" tilewidth="16" tileheight="16" tilecount="16" columns="4">
   <image source="Assets/Background/Green.png" width="64" height="64"/>
  </tileset>
- <tileset firstgid="267" name="Sand Particle" tilewidth="16" tileheight="16" tilecount="1" columns="1">
-  <image source="Assets/Traps/Sand Mud Ice/Sand Particle.png" width="16" height="16"/>
+ <tileset firstgid="266" name="Ice Particle" tilewidth="16" tileheight="16" tilecount="1" columns="1">
+  <image source="Assets/Traps/Sand Mud Ice/Ice Particle.png" trans="a9d2a0" width="16" height="16"/>
  </tileset>
- <tileset firstgid="268" name="Ice Particle" tilewidth="16" tileheight="16" tilecount="1" columns="1">
-  <image source="Assets/Traps/Sand Mud Ice/Ice Particle.png" width="16" height="16"/>
+ <tileset firstgid="267" name="Mud Particle" tilewidth="16" tileheight="16" tilecount="1" columns="1">
+  <image source="Assets/Traps/Sand Mud Ice/Mud Particle.png" trans="a9d2a0" width="16" height="16"/>
  </tileset>
- <tileset firstgid="269" name="Mud Particle" tilewidth="16" tileheight="16" tilecount="1" columns="1">
-  <image source="Assets/Traps/Sand Mud Ice/Mud Particle.png" width="16" height="16"/>
+ <tileset firstgid="268" name="Sand Particle" tilewidth="16" tileheight="16" tilecount="1" columns="1">
+  <image source="Assets/Traps/Sand Mud Ice/Sand Particle.png" trans="a9d2a0" width="16" height="16"/>
  </tileset>
  <layer id="1" name="background" width="50" height="15">
   <data encoding="base64" compression="zlib">
-   eJytltsOgjAQRFtUUP7/bxG0JDSZTGa7C+VhoonN9sze6pJSWm7Qt2gt2g4NuV9bagvP/YJSrCzL15ivyfOJ5x5CVo6Rt/6G7OybY8z5nDyfeE6xrg0f3E/Ijrk4U0eliM8PfI/yKm5mn0BYW4zfOxs13n7HG7xEeRU3s2PcychR72xUL3xflFdxcyxkno7YqXxm4OidjeqF747yKm5vN+5xnkUv4LB25yDiW/7qvVx/j7e1P1s9rrjU7vT6meOgF5wP7Afub+tNiO5G5vRmsdUbyouac3671Ft4Rd4b6/Wz1Wuj4YPFeYm+/dGd4e08zIHaUTPMW+t+zovHc3ZnWOwql8jDu8b6X2LVwOOJcJ6tJeZQzUiVx3C1Bnepsnuz8gdIoTaL
+   eJztk0kKwDAMxOLu/f9vu6UK1NAHFGrDiAisS25Tyn+cL79gwx2P589s7VxY22E8y9dOx93jgKPla2finnHB1fK19hGrtY9YrX3Eau0jVmsfsbpxAz5LJvc=
   </data>
  </layer>
  <layer id="5" name="graphics" width="50" height="15">
   <data encoding="base64" compression="zlib">
-   eJzVlcEOwUAQhqdCEJajIKjg6sKJ58FT4qHcejIbJjtZO9tRjbR/8qVJs9uZf2Z32gSAbc1pIWNkjWyQFdRTI3j5OCDHyLos56lVxuDqJQ6tTOIgH3VXVXyckDNy8d73E0dM3Id5rzXI8Me8pPhSvkV0RW7IHfT9aCMdgSqIfAzA9cAEejhD5gL/Eq+/L20/dsheIE+2l11VpsVV9v0I5Wx7uYjs4fOTf4fOraYG38wrzewI5Wzfpcp8+B46t7EakEL3o6hsDZeBuJSTJh/+HfKRwudsoZrQf7OM/wedAYot+eD5+L3h54h7kPBjSD5ic9bHj2tjPBihWadZE8OvifUxQRo1Z4o8ARDfLCk=
+   eJzVld8OwVAMxjsh/g2XgmCCWzdc8Tx4SjyUF9ATmjVHe9QssvMlvyxZztZ+bdfVAWATOQ1khKyQNbKEODWEp489cgic6yThq1XuPMHVTXKsSpMc8hG7quLjiJyQs3ff2ifuI32d7SGDH/PS4mv5FtEFuSI3sPejibQUqiDy0Ye8B6nQwykyU/iXeP19WfuxRXYKn+R62TZlWlxlfx9Szq6X88Az0i7mc2ypwTf7Stv9XFLO7l5mzIc/Q3MbqgFJ+j6KytVwIcSlnCz58PeQjwzedwvVhGaojP8HzQDF1nzwfPze8DniHjT8GJqP0J718eO6GHeGtOssZ0L4NXE+xkgtcibIAwPNJYY=
   </data>
  </layer>
  <objectgroup id="6" name="ground">

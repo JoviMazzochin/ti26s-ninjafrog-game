@@ -10,6 +10,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthoCachedTiledMapRenderer;
+import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.*;
 import com.badlogic.gdx.utils.viewport.FitViewport;
@@ -30,7 +31,7 @@ public class PlayScreen implements Screen {
 
     private TmxMapLoader mapLoader;
     private TiledMap map;
-    private OrthoCachedTiledMapRenderer renderer;
+    private OrthogonalTiledMapRenderer renderer;
 
     //Box2d variables
     private World world;
@@ -51,7 +52,7 @@ public class PlayScreen implements Screen {
         // Importing map from Tiled
         mapLoader = new TmxMapLoader();
         map = mapLoader.load("GameMap.tmx");
-        renderer = new OrthoCachedTiledMapRenderer(map, 1 / NinjaFrogGame.PPM);
+        renderer = new OrthogonalTiledMapRenderer(map, 1 / NinjaFrogGame.PPM);
 
         //setting gamecam
         gameCam.position.set(gamePort.getWorldWidth() / 2, gamePort.getWorldHeight() / 2, 0);
@@ -61,7 +62,7 @@ public class PlayScreen implements Screen {
         box2DDebugRenderer = new Box2DDebugRenderer();
 
         //generate the world
-        new B2WorldCreator(world, map);
+        new B2WorldCreator(world, map, renderer);
 
         //create Ninja in the game
         player = new NinjaFrog(world, this);
@@ -124,14 +125,18 @@ public class PlayScreen implements Screen {
         Gdx.gl.glClearColor(0,0,0,1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
-        //render game map
-        renderer.render();
+
 
         //renderer Box2DDegugLines
         box2DDebugRenderer.render(world, gameCam.combined);
 
         game.batch.setProjectionMatrix(gameCam.combined);
         game.batch.begin();
+//        gameCam.update();
+//        renderer.setView(gameCam);
+        renderer.render();
+        renderer.renderObjects(map.getLayers().get("coin"));
+        renderer.renderObjects(map.getLayers().get("graphics"));
         player.draw(game.batch);
         game.batch.end();
 
