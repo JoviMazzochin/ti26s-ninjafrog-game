@@ -1,11 +1,9 @@
 package com.utfpr.ti16s.ninjafroggame.Tools;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.physics.box2d.*;
 import com.utfpr.ti16s.ninjafroggame.NinjaFrogGame;
 import com.utfpr.ti16s.ninjafroggame.Sprites.InteractiveTileObject;
 import com.utfpr.ti16s.ninjafroggame.Sprites.NinjaFrog;
-import com.utfpr.ti16s.ninjafroggame.Sprites.Trap;
 
 public class WorldContactListener implements ContactListener {
     @Override

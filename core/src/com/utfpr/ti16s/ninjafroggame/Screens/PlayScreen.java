@@ -40,8 +40,6 @@ public class PlayScreen implements Screen {
 
     private Music music;
 
-    private float jumpDelta = 0;
-
     public PlayScreen(NinjaFrogGame game) {
         atlas = new TextureAtlas("ninjafrog.atlas");
 
@@ -70,12 +68,10 @@ public class PlayScreen implements Screen {
 
         world.setContactListener(new WorldContactListener());
 
-//        music = NinjaFrogGame.manager.get("audio/musics/music1.mp3", Music.class);
-
-//        music = NinjaFrogGame.getAssetManager().get("audio/musics/music2.mp3", Music.class);
-//        music.setLooping(true);
-//        music.setVolume(0.05f);
-//        music.play();
+        music = NinjaFrogGame.getAssetManager().get("audio/musics/music2.mp3", Music.class);
+        music.setLooping(true);
+        music.setVolume(0.1f);
+        music.play();
 
     }
 
@@ -86,10 +82,14 @@ public class PlayScreen implements Screen {
     public void handleInput(float dt) {
         if(Gdx.input.isKeyPressed(Input.Keys.UP))
             player.jump();
-        if(Gdx.input.isKeyPressed(Input.Keys.RIGHT) && player.b2body.getLinearVelocity().x <= 2)
-            player.b2body.applyLinearImpulse(new Vector2(0.1f, 0), player.b2body.getWorldCenter(), true);
-        if(Gdx.input.isKeyPressed(Input.Keys.LEFT) && player.b2body.getLinearVelocity().x >= -2)
-            player.b2body.applyLinearImpulse(new Vector2(-0.1f, 0), player.b2body.getWorldCenter(), true);
+        if(Gdx.input.isKeyPressed(Input.Keys.RIGHT)
+                && player.b2body.getLinearVelocity().x <= 2)
+            player.b2body.applyLinearImpulse(new Vector2(0.1f, 0),
+                                             player.b2body.getWorldCenter(), true);
+        if(Gdx.input.isKeyPressed(Input.Keys.LEFT)
+                && player.b2body.getLinearVelocity().x >= -2)
+            player.b2body.applyLinearImpulse(new Vector2(-0.1f, 0),
+                                             player.b2body.getWorldCenter(), true);
     }
 
     public void update(float dt) {
@@ -133,8 +133,6 @@ public class PlayScreen implements Screen {
 
         game.batch.setProjectionMatrix(gameCam.combined);
         game.batch.begin();
-//        gameCam.update();
-//        renderer.setView(gameCam);
         renderer.render();
         renderer.renderObjects(map.getLayers().get("coin"));
         renderer.renderObjects(map.getLayers().get("graphics"));
@@ -148,7 +146,7 @@ public class PlayScreen implements Screen {
             game.setScreen(new WinScreen(game));
         }
 
-        if(gameOver()){
+        if(isPlayerDead() || getHud().isTimeUp()){
             game.setScreen(new GameOverScreen(game));
             dispose();
         }
@@ -189,7 +187,7 @@ public class PlayScreen implements Screen {
         getHud().stopTimer();
     }
 
-    public boolean gameOver(){
+    public boolean isPlayerDead(){
         return player.currentState == NinjaFrog.State.DEAD;
     }
 }

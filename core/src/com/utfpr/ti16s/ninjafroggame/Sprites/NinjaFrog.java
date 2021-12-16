@@ -114,7 +114,8 @@ public class NinjaFrog extends Sprite {
     private State getState() {
         if(ninjaIsDead)
             return State.DEAD;
-        else if((b2body.getLinearVelocity().y > 0 && currentState == State.JUMPING) || (b2body.getLinearVelocity().y < 0 && previousState == State.JUMPING))
+        else if((b2body.getLinearVelocity().y > 0 && currentState == State.JUMPING)
+                || (b2body.getLinearVelocity().y < 0 && previousState == State.JUMPING))
             return State.JUMPING;
         else if(b2body.getLinearVelocity().y < 0 && previousState != State.RUNNING)
             return State.FALLING;

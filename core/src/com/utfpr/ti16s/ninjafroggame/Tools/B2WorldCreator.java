@@ -12,10 +12,6 @@ import com.utfpr.ti16s.ninjafroggame.Sprites.Trap;
 
 public class B2WorldCreator {
     public B2WorldCreator(World world, TiledMap map, OrthogonalTiledMapRenderer renderer) {
-        BodyDef bdef = new BodyDef();
-        PolygonShape shape = new PolygonShape();
-        FixtureDef fDef = new FixtureDef();
-        Body body;
 
         //creating ground bodies/fixtures
         for (MapObject object : map.getLayers().get(2).getObjects().getByType(RectangleMapObject.class)){
